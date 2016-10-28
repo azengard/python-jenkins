@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+ web:
+  build: .
+  command: python manage.py runserver 0.0.0.0:8000
+  ports:
+   - "8000:8000"
+  # links:
+   # - jenkins
+  volumes:
+   - .:/code
+
+ # jenkins:
+ #  image: jenkins
+ #  ports:
+ #   - "8080:8080"
+ #  volumes:
+ #   - .jenkins:/var/jenkins_home
